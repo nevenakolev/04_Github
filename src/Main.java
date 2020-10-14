@@ -17,7 +17,10 @@ public class Main {
                 int firstValue = sc.nextInt();
                 System.out.print("2. number: ");
                 int secondValue = sc.nextInt();
-                int result = firstValue + secondValue;
+                System.out.print("3. number: ");
+                int thirdValue = sc.nextInt();
+
+                int result = firstValue + secondValue + thirdValue;
 
                 System.out.println("   Result: " + result);
                 errorInput=false;
