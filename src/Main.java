@@ -8,6 +8,11 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
 
+        //choosing operation
+        System.out.print("If you want to add, then enter '0', if you want to subtract then enter '1': ");
+        int chosenOperation = sc.nextInt();
+
+        //calculator header
         System.out.println(printHeader());
 
         boolean errorInput=true;
@@ -20,11 +25,22 @@ public class Main {
                 System.out.print("3. number: ");
                 int thirdValue = sc.nextInt();
 
-                int result = firstValue + secondValue + thirdValue;
+                if(chosenOperation == 0) {
+                    int result = firstValue + secondValue + thirdValue;
 
-                System.out.println("   Result: " + result);
-                errorInput=false;
-                System.out.println("***************************************");
+                    System.out.println("   Result: " + result);
+                    errorInput = false;
+                    System.out.println("***************************************");
+                } else if(chosenOperation == 1){
+                    int result = firstValue - secondValue - thirdValue;
+
+                    System.out.println("   Result: " + result);
+                    errorInput = false;
+                    System.out.println("***************************************");
+                } else {
+                    System.out.println("An error occured while choosing an operator.");
+                    errorInput = false;
+                }
             } catch (Exception ex) {
                 sc.next();
                 System.out.println("Error while entering numeric value.");
